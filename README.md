@@ -289,17 +289,17 @@ Default: `false`
 
 This will filter parameters out of both the saved requestUrl and the hash used in the default file generation algorithm. This allows users to replay requests which use for example today's date or a random number as query parameters.
 
-#### ignorePath
+#### rewritePath
 
 Type: `Function`
 
-Default: `function(url){return url;}`
+Default: `undefined`
 
-This will filter path part out of both the saved requestUrl and the hash used in the default file generation algorithm. This allows users to replay requests which use for example today's date or a given timestamp.
+This will rewrite the path of both the saved requestUrl and the hash used in the default file generation algorithm. This allows users to replay requests which use for example today's date or a given timestamp.
 
 This example will replace any digit in request urls by an underscore:
 ```javascript
-ignorePath : function(url) {
+rewritePath : function(url) {
     return url.replace(/[0-9]/g, '_');
 }
 ```
