@@ -46,7 +46,7 @@
     "di": "2.0.0-pre-14",
     "director": "^1.2.8",
     "forwarded-for": "^1.0.0",
-    "http-proxy": "^1.13.1",
+    "http-proxy": "git://github.com/jtbonhomme/node-http-proxy.git#follow-redirect",
     "lodash": "^4.3.0",
     "q": "^1.4.1",
     "winston": "^2.1.1"
