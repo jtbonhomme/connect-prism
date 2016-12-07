@@ -289,6 +289,21 @@ Default: `false`
 
 This will filter parameters out of both the saved requestUrl and the hash used in the default file generation algorithm. This allows users to replay requests which use for example today's date or a random number as query parameters.
 
+#### ignorePath
+
+Type: `Function`
+
+Default: `function(url){return url;}`
+
+This will filter path part out of both the saved requestUrl and the hash used in the default file generation algorithm. This allows users to replay requests which use for example today's date or a given timestamp.
+
+This example will replace any digit in request urls by an underscore:
+```javascript
+ignorePath : function(url) {
+    return url.replace(/[0-9]/g, '_');
+}
+```
+
 #### clearOnStart
 
 Type: `Boolean`
@@ -322,7 +337,7 @@ Returns: `Boolean`
 
 Default: `null`
 
-User defined function that recieves the request and response objects and allows for user defined function to determine whether or not a particular request/response should result in a recording stored
+User defined function that receives the request and response objects and allows for user defined function to determine whether or not a particular request/response should result in a recording stored
 
 Example:
 
